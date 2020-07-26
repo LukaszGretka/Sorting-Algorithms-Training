@@ -1,8 +1,8 @@
 ﻿using SortingAlgorithmsTraining.Abstract;
 
-namespace SortingAlgorithmsTraining.BubbleSort
+namespace SortingAlgorithmsTraining.Implementation
 {
-    internal class BubbleSortAlgorithm : ISortingAlgorithm
+    internal class BubbleSort : ISortingAlgorithm
     {
         public int[] Sort(int[] collection)
         {

@@ -1,42 +1,42 @@
-﻿using SortingAlgorithmsTraining.Abstract;
-using System;
+﻿using System;
 using System.Linq;
 
 namespace SortingAlgorithmsTraining.Implementation
 {
     internal class QuickSort
     {
-        public int[] Sort(int[] collection)
+        public void Sort(int[] processedCollection, int startIndex, int endIndex)
         {
-            var currentBorderIndex = DivideCollection(collection);
+            if (startIndex < endIndex)
+            {
+                var currentBorderIndex = DivideCollection(processedCollection, startIndex, endIndex);
 
-            Sort(collection.Take(currentBorderIndex).ToArray());
-            Sort(collection.Skip(currentBorderIndex).ToArray());
-
-            throw new NotImplementedException();
+                Sort(processedCollection, startIndex, currentBorderIndex - 1);
+                Sort(processedCollection, currentBorderIndex + 1, endIndex);
+            }
         }
 
-        public int DivideCollection(int[] unsortedCollection)
+        public int DivideCollection(int[] processedCollection, int startIndex, int endIndex)
         {
-            int pivot = unsortedCollection[unsortedCollection.Length - 1];
-            int borderIndex = 0;
+            int pivot = processedCollection[endIndex];
+            int borderIndex = startIndex - 1;
 
-            for (int i = 0; i < unsortedCollection.Length; i++)
+            for (int i = startIndex; i < endIndex; i++)
             {
-                if (unsortedCollection[i] < pivot)
+                if (processedCollection[i] <= pivot)
                 {
-                    var buffer = unsortedCollection[borderIndex];
-                    unsortedCollection[borderIndex] = unsortedCollection[i];
-                    unsortedCollection[i] = buffer;
                     borderIndex++;
+                    var buffer = processedCollection[borderIndex];
+                    processedCollection[borderIndex] = processedCollection[i];
+                    processedCollection[i] = buffer;
                 }
             }
 
-            var borderBuffer = unsortedCollection[borderIndex];
-            unsortedCollection[borderIndex] = pivot;
-            unsortedCollection[unsortedCollection.Length - 1] = borderBuffer;
+            var borderBuffer = processedCollection[borderIndex + 1];
+            processedCollection[borderIndex + 1] = processedCollection[endIndex];
+            processedCollection[endIndex] = borderBuffer;
 
-            return borderIndex;
+            return borderIndex + 1;
         }
     }
 }

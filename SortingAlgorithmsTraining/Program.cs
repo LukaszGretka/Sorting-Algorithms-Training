@@ -8,8 +8,8 @@ namespace SortingAlgorithmsTraining
     {
         static void Main(string[] args)
         {
-            var processingCollection = CollectionGenerator.GetRandomizedCollection(50, 0, 100);
-            var insertionSort = new InsertionSort();
+            var processingCollection = CollectionGenerator.GetRandomizedCollection(50, -100, 100);
+            var insertionSort = new SelectionSort();
 
             Console.WriteLine("Unsorted array:");
             Console.WriteLine(string.Join(",", processingCollection));

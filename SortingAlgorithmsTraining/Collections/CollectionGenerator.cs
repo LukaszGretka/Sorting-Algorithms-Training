@@ -8,7 +8,7 @@ namespace SortingAlgorithmsTraining.Collections
     {
         internal static int[] GetFixedIntigerCollection()
         {
-            return new int[] { 9, 5, 1, 4, 7, 2, 3 };
+            return new int[] { 9, 4, 6, 2, 7, 1, 3, 5 };
         }
 
         internal static int[] GetRandomizedCollection(int collectionSize, int minValue = int.MinValue, int maxValue = int.MaxValue)

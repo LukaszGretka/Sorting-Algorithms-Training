@@ -8,17 +8,22 @@ namespace SortingAlgorithmsTraining
     {
         static void Main(string[] args)
         {
-            var processingCollection = CollectionGenerator.GetRandomizedCollection(50, -100, 100);
-            var insertionSort = new SelectionSort();
+            var processingCollection = CollectionGenerator
+                                       //.GetFixedIntigerCollection();
+                                       .GetRandomizedCollection(10, 1, 20);
+
+            var mergeSort = new MergeSort();
 
             Console.WriteLine("Unsorted array:");
             Console.WriteLine(string.Join(",", processingCollection));
 
-            insertionSort.Sort(processingCollection);
+            processingCollection = mergeSort.Sort(processingCollection, processingCollection.Length);
 
-            Console.WriteLine("Sorted array:");
+            Console.WriteLine($"{nameof(MergeSort)} completed. Sorted array:");
             Console.WriteLine(string.Join(",", processingCollection));
             Console.Read();
+
         }
+
     }
 }

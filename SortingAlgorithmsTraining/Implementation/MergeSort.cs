@@ -1,10 +1,16 @@
-﻿using System;
+﻿using SortingAlgorithmsTraining.Abstract;
+using System;
 
 namespace SortingAlgorithmsTraining.Implementation
 {
-    internal class MergeSort
+    internal class MergeSort : ISortingAlgorithm
     {
-        internal int[] Sort(int[] processingCollection, int elementCount)
+        public int[] Sort(int[] processingCollection)
+        {
+            return Sort(processingCollection, processingCollection.Length);
+        }
+
+        private int[] Sort(int[] processingCollection, int elementCount)
         {
             var splitArrayResult = SplitArray(processingCollection);
 

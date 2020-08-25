@@ -4,28 +4,28 @@ namespace SortingAlgorithmsTraining.Implementation
 {
     internal class SelectionSort : ISortingAlgorithm
     {
-        public int[] Sort(int[] processedCollection)
+        public int[] Sort(int[] processingCollection)
         {
-            for (int outerIndex = 1; outerIndex < processedCollection.Length; outerIndex++)
+            for (int outerIndex = 1; outerIndex < processingCollection.Length; outerIndex++)
             {
-                var minValue = processedCollection[outerIndex - 1];
+                var minValue = processingCollection[outerIndex - 1];
                 var minValueIndex = outerIndex - 1;
 
-                for (int innerIndex = outerIndex; innerIndex < processedCollection.Length; innerIndex++)
+                for (int innerIndex = outerIndex; innerIndex < processingCollection.Length; innerIndex++)
                 {
-                    if (processedCollection[innerIndex] < minValue)
+                    if (processingCollection[innerIndex] < minValue)
                     {
-                        minValue = processedCollection[innerIndex];
+                        minValue = processingCollection[innerIndex];
                         minValueIndex = innerIndex;
                     }
                 }
 
-                var buffer = processedCollection[outerIndex - 1];
-                processedCollection[outerIndex - 1] = processedCollection[minValueIndex];
-                processedCollection[minValueIndex] = buffer;
+                var buffer = processingCollection[outerIndex - 1];
+                processingCollection[outerIndex - 1] = processingCollection[minValueIndex];
+                processingCollection[minValueIndex] = buffer;
             }
 
-            return processedCollection;
+            return processingCollection;
         }
     }
 }

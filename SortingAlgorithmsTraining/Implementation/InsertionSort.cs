@@ -4,31 +4,31 @@ namespace SortingAlgorithmsTraining.Implementation
 {
     internal class InsertionSort : ISortingAlgorithm
     {
-        public int[] Sort(int[] processedCollection)
+        public int[] Sort(int[] processingCollection)
         {
             var sortedCollectionLenght = 1;
 
-            for (int index = 1; index < processedCollection.Length; index++)
+            for (int index = 1; index < processingCollection.Length; index++)
             {
                 var movementIndex = 0;
-                var buffer = processedCollection[sortedCollectionLenght];
+                var buffer = processingCollection[sortedCollectionLenght];
 
                 for (int innerIndex = 0; innerIndex < sortedCollectionLenght; innerIndex++)
                 {
-                    var insertingElement = processedCollection[sortedCollectionLenght - 1 - movementIndex];
+                    var insertingElement = processingCollection[sortedCollectionLenght - 1 - movementIndex];
 
                     if (buffer < insertingElement)
                     {
-                        processedCollection[sortedCollectionLenght - movementIndex] = insertingElement;
+                        processingCollection[sortedCollectionLenght - movementIndex] = insertingElement;
                         movementIndex++;
                     }
                 }
 
-                processedCollection[sortedCollectionLenght - movementIndex] = buffer;
+                processingCollection[sortedCollectionLenght - movementIndex] = buffer;
                 sortedCollectionLenght++;
             }
 
-            return processedCollection;
+            return processingCollection;
         }
     }
 }

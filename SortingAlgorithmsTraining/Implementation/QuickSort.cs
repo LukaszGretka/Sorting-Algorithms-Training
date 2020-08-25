@@ -1,11 +1,17 @@
-﻿using System;
-using System.Linq;
+﻿using SortingAlgorithmsTraining.Abstract;
 
 namespace SortingAlgorithmsTraining.Implementation
 {
-    internal class QuickSort
+    internal class QuickSort : ISortingAlgorithm
     {
-        public void Sort(int[] processedCollection, int startIndex, int endIndex)
+        public int[] Sort(int[] processingCollection)
+        {
+            Sort(processingCollection, 0, processingCollection.Length - 1);
+            
+            return processingCollection;
+        }
+
+        private void Sort(int[] processedCollection, int startIndex, int endIndex)
         {
             if (startIndex < endIndex)
             {

@@ -1,9 +1,7 @@
-﻿using System.Collections.Generic;
-
-namespace SortingAlgorithmsTraining.Abstract
+﻿namespace SortingAlgorithmsTraining.Abstract
 {
     public interface ISortingAlgorithm
     {
-        public int[] Sort(int[] processedCollection);
+        public int[] Sort(int[] processingCollection);
     }
 }

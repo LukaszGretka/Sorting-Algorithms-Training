@@ -6,8 +6,8 @@ Implemented algorithms:
 * Bubble Sort
 * Insertion Sort
 * Selection Sort
-* Quick Sort
-* Merge Sort
+* Quick Sort (recursive)
+* Merge Sort (recursive)
 
 Planned work:
 * Implementation of Heap Sort.

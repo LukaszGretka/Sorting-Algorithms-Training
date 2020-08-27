@@ -9,6 +9,9 @@ Implemented algorithms:
 * Quick Sort (recursive)
 * Merge Sort (recursive)
 
+Additional:
+* Stopwatch which allows to measure sorting times.
+* Simple UI on the Console.
+
 Planned work:
 * Implementation of Heap Sort.
-* Implementation of performance tool, which will allow to measure sorting times.
